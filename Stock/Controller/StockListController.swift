@@ -64,9 +64,11 @@ class StockListController: BaseViewController,FactoryModule {
             print("stocks: \(stocks)")
         }.store(in: &subscriber)
         
-        viewModel.$loading.sink { loading in
-            print("loading: \(loading)")
+        viewModel.$loading.sink {[unowned self] loading in
+            self.selfView.loadingView.isHidden = !loading
         }.store(in: &subscriber)
+        
+
     }
     
     override func configureUI() {

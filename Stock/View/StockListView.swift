@@ -14,6 +14,7 @@ class StockListView: BaseView {
         view.backgroundColor = .systemBackground
         return view
     }()
+    
     let searchViewController: UISearchController = {
        let view = UISearchController(searchResultsController: nil)
         view.searchBar.placeholder = "Enter a compony name or symbol"
@@ -21,11 +22,19 @@ class StockListView: BaseView {
         return view
     }()
     
+    let loadingView = LoadingView()
+    
     override func configureUI() {
-        addSubview(tableView)
-        tableView.snp.makeConstraints{
-            $0.top.leading.trailing.bottom.equalToSuperview()
+        [
+            tableView,
+            loadingView
+        ].forEach{
+            addSubview($0)
+            $0.snp.makeConstraints{
+                $0.top.leading.trailing.bottom.equalToSuperview()
+            }
         }
+        
 
         
     }

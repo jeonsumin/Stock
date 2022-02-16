@@ -9,6 +9,4 @@ import Foundation
 
 class StockRepositoryImpl: StockRepository {
     var apiKey: String = "78NIHQJ92C353EDQ"
-    
-    
 }

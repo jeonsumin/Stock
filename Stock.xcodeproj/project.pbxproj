@@ -21,6 +21,7 @@
 		DE4A19FF27BD1CC000F8D5D0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19FE27BD1CC000F8D5D0 /* MainCoordinator.swift */; };
 		DE4A1A0127BD1ED400F8D5D0 /* StockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A1A0027BD1ED400F8D5D0 /* StockRepository.swift */; };
 		DE4A1A0327BD1EEA00F8D5D0 /* StockRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A1A0227BD1EEA00F8D5D0 /* StockRepositoryImpl.swift */; };
+		DE4A1A0527BD1F6200F8D5D0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A1A0427BD1F6200F8D5D0 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DE4A19FE27BD1CC000F8D5D0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DE4A1A0027BD1ED400F8D5D0 /* StockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepository.swift; sourceTree = "<group>"; };
 		DE4A1A0227BD1EEA00F8D5D0 /* StockRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepositoryImpl.swift; sourceTree = "<group>"; };
+		DE4A1A0427BD1F6200F8D5D0 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		DE4A19EC27BD185A00F8D5D0 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				DE4A1A0427BD1F6200F8D5D0 /* Stock.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				DE4A19FD27BD1ACE00F8D5D0 /* CompositionRoot.swift in Sources */,
 				DE4A19D427BD17FE00F8D5D0 /* AppDelegate.swift in Sources */,
+				DE4A1A0527BD1F6200F8D5D0 /* Stock.swift in Sources */,
 				DE4A19D627BD17FE00F8D5D0 /* SceneDelegate.swift in Sources */,
 				DE4A19F427BD18F400F8D5D0 /* BaseView.swift in Sources */,
 				DE4A1A0127BD1ED400F8D5D0 /* StockRepository.swift in Sources */,

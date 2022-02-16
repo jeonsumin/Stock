@@ -34,8 +34,7 @@ class StockListView: BaseView {
                 $0.top.leading.trailing.bottom.equalToSuperview()
             }
         }
-        
-
-        
+        tableView.register(StockCell.self, forCellReuseIdentifier: StockCell.identifier)
+        tableView.separatorStyle = .none
     }
 }

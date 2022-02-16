@@ -16,6 +16,9 @@ class StockListViewModel {
     @Published var stocks: [Stock] = []
     @Published var errorMessage: String?
     @Published var loading = false
+    var currentStocks: [Stock] = []
+    
+    
     var subscriber: Set<AnyCancellable> = .init()
     let usecase: StockUseCase
     
@@ -30,6 +33,7 @@ class StockListViewModel {
             }
         } receiveValue: {[unowned self] StockResult in
             self.stocks = StockResult.items
+            self.currentStocks = StockResult.items
         }.store(in: &subscriber)
 
     }

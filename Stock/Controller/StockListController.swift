@@ -35,7 +35,12 @@ class StockListController: BaseViewController,FactoryModule {
         //        viewModel.viewDidLoad()
         bind()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        enableScrollWhenKeyboardAppeared(scrollView: selfView.tableView)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        removeListeners()
+    }
     
     func bind() {
         //        viewModel.loading.subscribe(onNext: { loading in
@@ -60,8 +65,8 @@ class StockListController: BaseViewController,FactoryModule {
             print("message: \(message)")
         }.store(in: &subscriber)
         
-        viewModel.$stocks.sink { stocks in
-            print("stocks: \(stocks)")
+        viewModel.$stocks.sink { [unowned self] _ in
+            self.selfView.tableView.reloadData()
         }.store(in: &subscriber)
         
         viewModel.$loading.sink {[unowned self] loading in
@@ -76,6 +81,8 @@ class StockListController: BaseViewController,FactoryModule {
         selfView.snp.makeConstraints{
             $0.leading.top.trailing.bottom.equalToSuperview()
         }
+        self.selfView.tableView.delegate = self
+        self.selfView.tableView.dataSource = self
         
         navigationItem.searchController = selfView.searchViewController
     }

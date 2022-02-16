@@ -8,9 +8,12 @@
 import SnapKit
 import UIKit
 import Pure
+import RxCocoa
+import RxSwift
+import RxCocoa
 
 class StockListController: BaseViewController,FactoryModule {
-  
+    
     struct Dependency{
         let viewModel: StockListViewModel
     }
@@ -29,24 +32,41 @@ class StockListController: BaseViewController,FactoryModule {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
+        //        viewModel.viewDidLoad()
         bind()
     }
-
+    
     
     func bind() {
-        viewModel.loading.subscribe(onNext: { loading in
-            print("loading: \(loading)")
+        //        viewModel.loading.subscribe(onNext: { loading in
+        //            print("loading: \(loading)")
+        //        }).disposed(by: disposeBag)
+        //
+        //        viewModel.errorMessage.subscribe(onNext: { error in
+        //            guard let error = error else { return }
+        //            print("ERROR:: \(error)")
+        //        }).disposed(by: disposeBag)
+        //
+        //        viewModel.stocks.subscribe(onNext: { stocks in
+        //            print("stocks: \(stocks)")
+        //        }).disposed(by: disposeBag)
+        selfView.searchViewController.searchBar.rx.text.debounce(.microseconds(300), scheduler: MainScheduler.instance).subscribe(onNext: {[unowned self] text in
+            guard let text = text, !text.isEmpty else { return }
+            self.viewModel.searchQueryChanged(query: text)
         }).disposed(by: disposeBag)
         
-        viewModel.errorMessage.subscribe(onNext: { error in
-            guard let error = error else { return }
-            print("ERROR:: \(error)")
-        }).disposed(by: disposeBag)
+        viewModel.$errorMessage.sink { errorMessage in
+            guard let message = errorMessage, !message.isEmpty else {return}
+            print("message: \(message)")
+        }.store(in: &subscriber)
         
-        viewModel.stocks.subscribe(onNext: { stocks in
+        viewModel.$stocks.sink { stocks in
             print("stocks: \(stocks)")
-        }).disposed(by: disposeBag)
+        }.store(in: &subscriber)
+        
+        viewModel.$loading.sink { loading in
+            print("loading: \(loading)")
+        }.store(in: &subscriber)
     }
     
     override func configureUI() {
@@ -55,21 +75,8 @@ class StockListController: BaseViewController,FactoryModule {
             $0.leading.top.trailing.bottom.equalToSuperview()
         }
         
-        selfView.searchViewController.delegate = self
-        selfView.searchViewController.searchResultsUpdater = self
-        
         navigationItem.searchController = selfView.searchViewController
     }
 }
 
-extension StockListController: UISearchControllerDelegate {
-    
-}
 
-extension StockListController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-    
-    
-}

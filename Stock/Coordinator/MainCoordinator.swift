@@ -6,12 +6,21 @@
 //
 
 import UIKit
+import Pure
 
-class MainCoordinator:Coordinator {
+class MainCoordinator:Coordinator, FactoryModule {
+    struct Dependency {
+        let stockLisControllerFactory: () -> StockListController
+    }
     var navigationController: UINavigationController?
     
+    let rootViewController: StockListController
+    
+    required init(dependency: Dependency, payload: ()) {
+        rootViewController = dependency.stockLisControllerFactory()
+    }
+    
     func start() {
-        let rootViewController = StockListViewController()
         navigationController?.setViewControllers([rootViewController], animated: false)
     }
     

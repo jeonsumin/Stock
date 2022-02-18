@@ -23,11 +23,13 @@ class StockListView: BaseView {
     }()
     
     let loadingView = LoadingView()
+    let emtyView = EmptyView()
     
     override func configureUI() {
         [
             tableView,
-            loadingView
+            loadingView,
+            emtyView
         ].forEach{
             addSubview($0)
             $0.snp.makeConstraints{

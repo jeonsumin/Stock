@@ -73,6 +73,9 @@ class StockListController: BaseViewController,FactoryModule {
             self.selfView.loadingView.isHidden = !loading
         }.store(in: &subscriber)
         
+        viewModel.$isEmpty.sink { isEmpty in            
+            self.selfView.emtyView.isHidden = !isEmpty
+        }.store(in: &subscriber)
 
     }
     

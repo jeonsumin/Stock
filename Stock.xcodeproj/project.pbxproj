@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		80E2B1840000D02F0D2C9D4A /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CD609D6136FEDD315AB9A0 /* Pods_Stock.framework */; };
 		DE20C2EB27C37E4C000A5144 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20C2EA27C37E4C000A5144 /* StockDetailView.swift */; };
+		DE20C2ED27C38563000A5144 /* StockDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20C2EC27C38563000A5144 /* StockDetailTopView.swift */; };
+		DE20C2EF27C3875E000A5144 /* StockDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE20C2EE27C3875E000A5144 /* StockDetailBottomView.swift */; };
 		DE27B0C327BF380A0007E126 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27B0C227BF380A0007E126 /* EmptyView.swift */; };
 		DE27B0C527BF3AC30007E126 /* StockDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27B0C427BF3AC30007E126 /* StockDetailController.swift */; };
 		DE38964627BD36DA00D6F1D3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38964527BD36DA00D6F1D3 /* LoadingView.swift */; };
@@ -41,6 +43,8 @@
 		B05B4C8F6AE25061D92E59E3 /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
 		C6CD609D6136FEDD315AB9A0 /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE20C2EA27C37E4C000A5144 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
+		DE20C2EC27C38563000A5144 /* StockDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailTopView.swift; sourceTree = "<group>"; };
+		DE20C2EE27C3875E000A5144 /* StockDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailBottomView.swift; sourceTree = "<group>"; };
 		DE27B0C227BF380A0007E126 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		DE27B0C427BF3AC30007E126 /* StockDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailController.swift; sourceTree = "<group>"; };
 		DE38964527BD36DA00D6F1D3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				DE38964927BD38DD00D6F1D3 /* StockCell.swift */,
 				DE27B0C227BF380A0007E126 /* EmptyView.swift */,
 				DE20C2EA27C37E4C000A5144 /* StockDetailView.swift */,
+				DE20C2EC27C38563000A5144 /* StockDetailTopView.swift */,
+				DE20C2EE27C3875E000A5144 /* StockDetailBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE20C2ED27C38563000A5144 /* StockDetailTopView.swift in Sources */,
 				DE4A19FD27BD1ACE00F8D5D0 /* CompositionRoot.swift in Sources */,
 				DE4A1A0927BD220C00F8D5D0 /* StockListViewModel.swift in Sources */,
 				DE4A19D427BD17FE00F8D5D0 /* AppDelegate.swift in Sources */,
@@ -354,6 +361,7 @@
 				DE4A19F027BD187A00F8D5D0 /* BaseViewController.swift in Sources */,
 				DE38964827BD386100D6F1D3 /* Font.swift in Sources */,
 				DE4A19F227BD18CF00F8D5D0 /* StockListController.swift in Sources */,
+				DE20C2EF27C3875E000A5144 /* StockDetailBottomView.swift in Sources */,
 				DE4A1A0727BD219E00F8D5D0 /* StockUseCase.swift in Sources */,
 				DE4A19FB27BD1A7A00F8D5D0 /* Coordinator.swift in Sources */,
 			);

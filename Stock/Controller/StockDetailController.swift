@@ -7,11 +7,13 @@
 
 import UIKit
 import Pure
+import SnapKit
 
 class StockDetailController: BaseViewController, FactoryModule{
     struct Dependency {
         let sotck: Stock
     }
+    let selfView = StockDetailView()
     
     let stock: Stock
     
@@ -26,5 +28,9 @@ class StockDetailController: BaseViewController, FactoryModule{
     override func configureUI() {
         view.backgroundColor = .systemBackground
         title = "Detail"
+        view.addSubview(selfView)
+        selfView.snp.makeConstraints{
+            $0.leading.top.trailing.bottom.equalToSuperview()
+        }
     }
 }
